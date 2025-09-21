@@ -66,4 +66,3 @@ const chartConfig = {
     color: 'hsl(var(--chart-2))',
   },
 } satisfies import('@/components/ui/chart').ChartConfig;
-
