@@ -1,5 +1,3 @@
-'use client';
-import { useSearchParams } from 'next/navigation';
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { SettingsHeader } from '@/components/settings/settings-header';
 import { SettingsTabs } from '@/components/settings/settings-tabs';
@@ -12,9 +10,12 @@ import { AppearanceTab } from '@/components/settings/appearance-tab';
 import { DataTab } from '@/components/settings/data-tab';
 import { IntegrationsTab } from '@/components/settings/integrations-tab';
 
-export default function SettingsPage() {
-    const searchParams = useSearchParams();
-    const currentTab = searchParams.get('tab') || 'profile';
+export default function SettingsPage({
+    searchParams,
+}: {
+    searchParams: { [key: string]: string | string[] | undefined };
+}) {
+    const currentTab = typeof searchParams.tab === 'string' ? searchParams.tab : 'profile';
 
     return (
         <>

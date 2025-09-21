@@ -112,7 +112,6 @@ export default {
   },
   plugins: [
     require('tailwindcss-animate'), 
-    require('@tailwindcss/line-clamp'),
     function({ addVariant }: { addVariant: any }) {
       addVariant('destructive-outline', `&[data-variant="destructive-outline"]`);
     },
