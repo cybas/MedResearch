@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "user-avatar",
+      "description": "User avatar",
+      "imageUrl": "https://picsum.photos/seed/user-avatar/40/40",
+      "imageHint": "person"
+    },
+    {
+      "id": "nejm-logo",
+      "description": "NEJM logo",
+      "imageUrl": "https://picsum.photos/seed/nejm-logo/24/24",
+      "imageHint": "letter N"
+    },
+    {
+      "id": "ct-logo",
+      "description": "ClinicalTrials.gov logo",
+      "imageUrl": "https://picsum.photos/seed/ct-logo/24/24",
+      "imageHint": "letter C"
+    },
+    {
+      "id": "lancet-logo",
+      "description": "The Lancet logo",
+      "imageUrl": "https://picsum.photos/seed/lancet-logo/24/24",
+      "imageHint": "letter L"
+    },
+    {
+      "id": "pubmed-logo",
+      "description": "PubMed logo",
+      "imageUrl": "https://picsum.photos/seed/pubmed-logo/24/24",
+      "imageHint": "letter P"
+    },
+    {
+      "id": "nature-logo",
+      "description": "Nature Medicine logo",
+      "imageUrl": "https://picsum.photos/seed/nature-logo/24/24",
+      "imageHint": "letter M"
+    }
+  ]
 }
