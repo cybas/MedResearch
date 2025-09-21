@@ -1,5 +1,14 @@
 import type {Config} from 'tailwindcss';
 
+const destructiveOutline = {
+  "border": "hsl(var(--destructive))",
+  "color": "hsl(var(--destructive))",
+  "background-color": "transparent",
+  "&:hover": {
+    "background-color": "hsl(var(--destructive) / 0.1)",
+  },
+}
+
 export default {
   darkMode: ['class'],
   content: [
@@ -101,5 +110,16 @@ export default {
       },
     },
   },
-  plugins: [require('tailwindcss-animate'), require('@tailwindcss/line-clamp')],
+  plugins: [
+    require('tailwindcss-animate'), 
+    require('@tailwindcss/line-clamp'),
+    function({ addVariant }: { addVariant: any }) {
+      addVariant('destructive-outline', `&[data-variant="destructive-outline"]`);
+    },
+    function({ theme, addComponents }: { theme: any, addComponents: any }) {
+      addComponents({
+        '.destructive-outline': destructiveOutline,
+      });
+    }
+  ],
 } satisfies Config;
