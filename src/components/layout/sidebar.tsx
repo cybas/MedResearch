@@ -11,12 +11,13 @@ import {
 } from "@/components/ui/sidebar";
 import { Dna, Home, Tag, Book, Bell, FolderHeart, ShieldCheck, Settings, ChevronsRight } from "lucide-react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const menuItems = [
     {
         group: "Main",
         items: [
-            { href: "/", icon: Home, label: "Dashboard", active: true },
+            { href: "/dashboard", icon: Home, label: "Dashboard" },
             { href: "/keywords", icon: Tag, label: "Keywords" },
             { href: "/sources", icon: Book, label: "Sources" },
             { href: "/updates", icon: Bell, label: "Updates" },
@@ -57,10 +58,10 @@ export function AppSidebar() {
                                     isActive={pathname === item.href}
                                     tooltip={item.label}
                                 >
-                                    <a href={item.href}>
+                                    <Link href={item.href}>
                                         <item.icon />
                                         <span>{item.label}</span>
-                                    </a>
+                                    </Link>
                                 </SidebarMenuButton>
                             </SidebarMenuItem>
                         ))}

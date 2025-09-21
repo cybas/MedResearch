@@ -20,8 +20,18 @@ import {
 } from "@/components/ui/dialog";
 import { Bell, Search, HelpCircle, User, LogOut, Building, Command } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export function AppHeader() {
+    const router = useRouter();
+
+    const handleSearchSubmit = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter') {
+            const query = event.currentTarget.value;
+            router.push(`/updates?q=${encodeURIComponent(query)}`);
+        }
+    };
+
     return (
         <header className="flex items-center h-16 shrink-0 gap-4">
             <div className="flex-1">
@@ -30,6 +40,7 @@ export function AppHeader() {
                     <Input
                         placeholder="Search journals, clinical trials, and your memory…"
                         className="pl-9 bg-secondary"
+                        onKeyDown={handleSearchSubmit}
                     />
                 </div>
             </div>
